@@ -1,6 +1,6 @@
 import {NextApiRequest, NextApiResponse} from "next";
 import bcrypt from "bcryptjs";
-import DATABASE_CONNECTION from "@/lib/MongoDB";
+import DATABASE_CONNECTION from "@/lib/mongoose";
 import User from "@/models/User";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {

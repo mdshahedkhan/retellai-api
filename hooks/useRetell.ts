@@ -1,9 +1,10 @@
-import {config} from "@/constraints/config"
+/* eslint-disable import/no-anonymous-default-export */
 import Retell from "retell-sdk";
 
+const RETELL_API_KEY = process.env.RETELL_API_KEY || ""
 
 export default function () {
     return (new Retell({
-        apiKey: config.RETELL_API_KEY,
+        apiKey: RETELL_API_KEY,
     }));
 }
