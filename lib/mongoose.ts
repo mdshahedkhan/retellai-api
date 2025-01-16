@@ -9,9 +9,11 @@ if (!MONGO_URI) {
 
 const connectMongo = async () => {
 
-    const connection = mongoose.connect(MONGO_URI).then((mongoose) => mongoose);
-
-    return (await connection).Connection;
+    try {
+        await mongoose.connect(MONGO_URI).then((mongoose) => mongoose);
+    } catch (error) {
+        console.log(error)
+    }
 };
 
 export default connectMongo;
